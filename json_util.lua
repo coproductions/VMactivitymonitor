@@ -33,7 +33,7 @@ local function printValue(avalue, indent, name)
 	for _,value in ipairs(avalue) do
 	length = length + 1
 	end
-	print('length in ipairs',length)
+	--print('length in ipairs',length)
       for _, value in ipairs(avalue) do
 	counter_ipair = counter_ipair + 1
         printValue(value, indent..'    ')
@@ -48,7 +48,7 @@ local function printValue(avalue, indent, name)
 	 for key,value in pairs(avalue) do
           length = length + 1
          end
-	 print('length in pairs',length)
+	 --print('length in pairs',length)
       for key, value in pairs(avalue) do
 	counter = counter + 1
         printValue(value, indent..'    ', key)
@@ -62,8 +62,10 @@ local function printValue(avalue, indent, name)
    -- print(string.format("%s},", indent))
   else
     if name then
+      print('its a name',length)
       print(string.format('%s"%s" :  "%s",', indent, name, literalForValue(avalue)))
     else
+      print('its a other',length)
       print(string.format("%s%s,", indent, literalForValue(avalue)))
     end
   end
