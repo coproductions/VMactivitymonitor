@@ -53,7 +53,7 @@ local function printValue(avalue, indent, name)
 	counter = counter + 1
         printValue(value, indent..'    ', key)
 	    if counter < length then
-                print(string.format("%s,", indent))
+                print(string.format(",", indent))
         else
                 print(string.format("%s}", indent))
         end
