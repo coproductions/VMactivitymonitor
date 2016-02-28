@@ -62,11 +62,9 @@ local function printValue(avalue, indent, name)
    -- print(string.format("%s},", indent))
   else
     if name then
-      print('its a name',length)
-      print(string.format('%s"%s" :  "%s",', indent, name, literalForValue(avalue)))
+      print(string.format('%s"%s" :  "%s"', indent, name, literalForValue(avalue)))
     else
-      print('its a other',length)
-      print(string.format("%s%s,", indent, literalForValue(avalue)))
+      print(string.format("%s%s", indent, literalForValue(avalue)))
     end
   end
 
