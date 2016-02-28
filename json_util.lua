@@ -38,9 +38,13 @@ local function printValue(avalue, indent, name)
 	counter_ipair = counter_ipair + 1
         printValue(value, indent..'    ')
 	if counter < length then
-		print(string.format("%s},", indent))
+    printValue(value, indent..'    ',",")
+
+		--print(string.format("%s},", indent))
 	else
-	 	print(string.format("%s}", indent))
+    printValue(value, indent..'    ',"%s}")
+
+	 	--print(string.format("%s}", indent))
         end
        end
     else
@@ -53,9 +57,13 @@ local function printValue(avalue, indent, name)
 	counter = counter + 1
         printValue(value, indent..'    ', key)
 	    if counter < length then
-                print(string.format(",", indent))
+           printValue(value, indent..'    ', key,",")
+
+                --print(string.format(",", indent))
         else
-                print(string.format("%s}", indent))
+            printValue(value, indent..'    ', key,"%s}")
+
+                --print(string.format("%s}", indent))
         end
       end
     end
