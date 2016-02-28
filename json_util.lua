@@ -36,15 +36,11 @@ local function printValue(avalue, indent, name)
 	--print('length in ipairs',length)
       for _, value in ipairs(avalue) do
 	counter_ipair = counter_ipair + 1
-        --printValue(value, indent..'    ')
+        printValue(value, indent..'    ')
 	if counter < length then
-    printValue(value, indent..'    ',",","hello")
-
-		--print(string.format("%s},", indent))
+		print(string.format("%s},", indent))
 	else
-    printValue(value, indent..'    ',"%s}","hello")
-
-	 	--print(string.format("%s}", indent))
+	 	print(string.format("%s}", indent))
         end
        end
     else
@@ -55,15 +51,13 @@ local function printValue(avalue, indent, name)
 	 --print('length in pairs',length)
       for key, value in pairs(avalue) do
 	counter = counter + 1
-        --printValue(value, indent..'    ', key)
+        printValue(value, indent..'    ', key)
 	    if counter < length then
-           printValue(value, indent..'    ', key,",")
 
-                --print(string.format(",", indent))
+                print(string.format(",", indent))
         else
-            printValue(value, indent..'    ', key,"%s}")
 
-                --print(string.format("%s}", indent))
+                print(string.format("%s}", indent))
         end
       end
     end
