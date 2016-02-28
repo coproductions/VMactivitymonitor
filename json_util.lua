@@ -38,11 +38,11 @@ local function printValue(avalue, indent, name)
 	counter_ipair = counter_ipair + 1
         --printValue(value, indent..'    ')
 	if counter < length then
-    printValue(value, indent..'    ',",")
+    printValue(value, indent..'    ',",","hello")
 
 		--print(string.format("%s},", indent))
 	else
-    printValue(value, indent..'    ',"%s}")
+    printValue(value, indent..'    ',"%s}","hello")
 
 	 	--print(string.format("%s}", indent))
         end
