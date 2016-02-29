@@ -1,4 +1,3 @@
-
 local function literalForValue(avalue)
   if type(avalue) == "number" or type(avalue) == "boolean" then
     return tostring(avalue)
@@ -12,8 +11,6 @@ local function literalForValue(avalue)
   return string.format("%s", str)
 end
 
-local data = ""
-
 local function printValue(avalue, indent, name)
   if not avalue then return end;
 
@@ -22,79 +19,59 @@ local function printValue(avalue, indent, name)
 
   if type(avalue) == "table" then
 -- define a counter
-	local length = 0
-	local counter = 0
+  local length = 0
+  local counter = 0
     if name then
-      -- data = data..'/n'..'"'..name..'"'..': {'
       print(string.format('%s"%s" : {', indent, name))
     else
-      -- data = data..'\n'..'"'..name..'"'..': {'
-
       print(string.format("%s{", indent))
     end
 
     if #avalue > 0 then
       -- it's a list,so use ipair
 --first get table length
-	for _,value in ipairs(avalue) do
-	length = length + 1
-	end
-	--print('length in ipairs',length)
+  for _,value in ipairs(avalue) do
+  length = length + 1
+  end
+  --print('length in ipairs',length)
       for _, value in ipairs(avalue) do
-	counter_ipair = counter_ipair + 1
+  counter_ipair = counter_ipair + 1
         printValue(value, indent..'    ')
-	if counter < length then
-    -- data = ..data.."},"
-		print(string.format("%s},", indent))
-	else
-    -- data = data.."}"
-	 	print(string.format("%s}", indent))
+  if counter < length then
+    print(string.format("%s},", indent))
+  else
+    print(string.format("%s}", indent))
         end
        end
     else
       -- assume it's a dictionary, so use pairs
-	 for key,value in pairs(avalue) do
+   for key,value in pairs(avalue) do
           length = length + 1
          end
-	 --print('length in pairs',length)
+   --print('length in pairs',length)
       for key, value in pairs(avalue) do
-	counter = counter + 1
+  counter = counter + 1
         printValue(value, indent..'    ', key)
-	    if counter < length then
-        -- data = data.."\n"..","
-        print(string.format(",", indent))
+      if counter < length then
+
+                print(string.format(",", indent))
         else
-          -- data = data.."\n".."}"
-          print(string.format("%s}", indent))
+
+                print(string.format("%s}", indent))
         end
       end
     end
    -- print(string.format("%s},", indent))
   else
     if name then
-      -- data = data..'\n'..name..':'..'"'..avalue..'"'
       print(string.format('%s"%s" :  "%s"', indent, name, literalForValue(avalue)))
     else
-      -- data = data..'"'..avalue..'"'
       print(string.format("%s%s", indent, literalForValue(avalue)))
     end
   end
 
 end
 
--- return {
---   printValue = printValue;
--- }
-
--- Opens a file in append mode
-local file = io.open("testData.json", "a")
-
-
--- sets the default output file as test.lua
--- io.output(file)
-
--- appends a word test to the last line of the file
-file:write("hello")
-
--- closes the open file
-file:close()
+return {
+  printValue = printValue;
+}
