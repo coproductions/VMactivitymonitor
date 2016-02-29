@@ -25,10 +25,10 @@ local function printValue(avalue, indent, name)
 	local length = 0
 	local counter = 0
     if name then
-      data = data..'/n'..'"'..name..'"'..': {'
+      -- data = data..'/n'..'"'..name..'"'..': {'
       print(string.format('%s"%s" : {', indent, name))
     else
-      data = data..'\n'..'"'..name..'"'..': {'
+      -- data = data..'\n'..'"'..name..'"'..': {'
 
       print(string.format("%s{", indent))
     end
@@ -44,10 +44,10 @@ local function printValue(avalue, indent, name)
 	counter_ipair = counter_ipair + 1
         printValue(value, indent..'    ')
 	if counter < length then
-    data = ..data.."},"
+    -- data = ..data.."},"
 		print(string.format("%s},", indent))
 	else
-    data = data.."}"
+    -- data = data.."}"
 	 	print(string.format("%s}", indent))
         end
        end
@@ -61,10 +61,10 @@ local function printValue(avalue, indent, name)
 	counter = counter + 1
         printValue(value, indent..'    ', key)
 	    if counter < length then
-        data = data.."\n"..","
+        -- data = data.."\n"..","
         print(string.format(",", indent))
         else
-          data = data.."\n".."}"
+          -- data = data.."\n".."}"
           print(string.format("%s}", indent))
         end
       end
@@ -72,10 +72,10 @@ local function printValue(avalue, indent, name)
    -- print(string.format("%s},", indent))
   else
     if name then
-      data = data..'\n'..name..':'..'"'..avalue..'"'
+      -- data = data..'\n'..name..':'..'"'..avalue..'"'
       print(string.format('%s"%s" :  "%s"', indent, name, literalForValue(avalue)))
     else
-      data = data..'"'..avalue..'"'
+      -- data = data..'"'..avalue..'"'
       print(string.format("%s%s", indent, literalForValue(avalue)))
     end
   end
