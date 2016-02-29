@@ -94,7 +94,7 @@ local file = io.open("testData.json", "a")
 -- io.output(file)
 
 -- appends a word test to the last line of the file
-file:write(data)
+file:write("hello")
 
 -- closes the open file
-file:close(file)
+file:close()
