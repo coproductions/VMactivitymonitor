@@ -1,3 +1,4 @@
+
 local function literalForValue(avalue)
   if type(avalue) == "number" or type(avalue) == "boolean" then
     return tostring(avalue)
@@ -11,6 +12,8 @@ local function literalForValue(avalue)
   return string.format("%s", str)
 end
 
+local data = ""
+
 local function printValue(avalue, indent, name)
   if not avalue then return end;
 
@@ -22,8 +25,11 @@ local function printValue(avalue, indent, name)
 	local length = 0
 	local counter = 0
     if name then
+      data = data..string.format('%s"%s" : {', indent, name)
       print(string.format('%s"%s" : {', indent, name))
     else
+      data = data..string.format("%s{", indent)
+
       print(string.format("%s{", indent))
     end
 
@@ -38,8 +44,10 @@ local function printValue(avalue, indent, name)
 	counter_ipair = counter_ipair + 1
         printValue(value, indent..'    ')
 	if counter < length then
+    data = data..string.format("%s},", indent)
 		print(string.format("%s},", indent))
 	else
+    data = data..string.format("%s}", indent))
 	 	print(string.format("%s}", indent))
         end
        end
@@ -53,19 +61,21 @@ local function printValue(avalue, indent, name)
 	counter = counter + 1
         printValue(value, indent..'    ', key)
 	    if counter < length then
-
-                print(string.format(",", indent))
+        data = data..string.format(",", indent)
+        print(string.format(",", indent))
         else
-
-                print(string.format("%s}", indent))
+          data = string.format("%s}", indent)
+          print(string.format("%s}", indent))
         end
       end
     end
    -- print(string.format("%s},", indent))
   else
     if name then
+      data = data..string.format('%s"%s" :  "%s"', indent, name, literalForValue(avalue))
       print(string.format('%s"%s" :  "%s"', indent, name, literalForValue(avalue)))
     else
+      data = data..string.format("%s%s", indent, literalForValue(avalue))
       print(string.format("%s%s", indent, literalForValue(avalue)))
     end
   end
@@ -79,11 +89,12 @@ end
 -- Opens a file in append mode
 local file = io.open("testData.json", "a")
 
+
 -- sets the default output file as test.lua
-io.output(file)
+-- io.output(file)
 
 -- appends a word test to the last line of the file
-io.write(printValue)
+io.write(data)
 
 -- closes the open file
 io.close(file)
