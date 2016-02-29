@@ -25,7 +25,7 @@ local swaptotal = meminfo.SwapTotal.size
 local swapfree = meminfo.SwapFree.size
 local swapused = swaptotal - swapfree
 
-print(string.format("%18s %10s %10s %10s %10s %10s",'total', 'used', 'free', 'shared', 'buffers', 'cached'))
-print(string.format("Mem: %13d %10d %10d %10d %10d %10d", memtotal, memused, memfree, memshared, membuffers, memcached))
+-- print(string.format("%18s %10s %10s %10s %10s %10s",'total', 'used', 'free', 'shared', 'buffers', 'cached'))
+-- print(string.format("Mem: %13d %10d %10d %10d %10d %10d", memtotal, memused, memfree, memshared, membuffers, memcached))
 --print(string.format("-/+ buffers/cache: %10d %10d", 1, 2))
 printJson.printValue(meminfo)
