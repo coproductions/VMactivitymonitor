@@ -72,6 +72,18 @@ local function printValue(avalue, indent, name)
 
 end
 
-return {
-  printValue = printValue;
-}
+-- return {
+--   printValue = printValue;
+-- }
+
+-- Opens a file in append mode
+local file = io.open("testData.json", "a")
+
+-- sets the default output file as test.lua
+io.output(file)
+
+-- appends a word test to the last line of the file
+io.write("-- End of the test.lua file")
+
+-- closes the open file
+io.close(file)
