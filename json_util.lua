@@ -83,7 +83,7 @@ local file = io.open("testData.json", "a")
 io.output(file)
 
 -- appends a word test to the last line of the file
-io.write("-- End of the test.lua file")
+io.write(printValue)
 
 -- closes the open file
 io.close(file)
