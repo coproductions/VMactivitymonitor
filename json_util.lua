@@ -21,6 +21,7 @@ local function printValue(avalue, indent, name)
   local counter_ipair = 0
   if type(avalue) == "table" then
 -- define a counter
+      print(string.format("%s{", indent))
 
     if name then
       print(string.format('%s"%s" : {', indent, name))
@@ -28,7 +29,6 @@ local function printValue(avalue, indent, name)
     end
 
     if #avalue > 0 then
-      print(string.format("%s{", indent))
       -- it's a list,so use ipair
 --first get table length
   for _,value in ipairs(avalue) do
