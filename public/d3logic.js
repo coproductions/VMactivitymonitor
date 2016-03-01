@@ -47,6 +47,7 @@ divs.style({
       default:
         return 'black';
     }
+  }
 })
 
 
