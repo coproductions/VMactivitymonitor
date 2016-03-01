@@ -87,7 +87,7 @@ var color = d3.scale.category20c();
 
 
 
-var vis = d3.select('#chart').append("svg:svg").data(memValues).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
+var vis = d3.select('#chart').append("svg:svg").data([memValues]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
 var pie = d3.layout.pie().value(function(d){return d.value;});
 
 // declare an arc generator function
