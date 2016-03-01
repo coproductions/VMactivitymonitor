@@ -18,6 +18,7 @@ local function printValue(avalue, indent, name)
 
   local length = 0
   local counter = 0
+  local counter_ipair = 0
   if type(avalue) == "table" then
 -- define a counter
 
