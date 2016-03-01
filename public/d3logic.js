@@ -34,7 +34,7 @@ var divs = d3.select('#enter .right')
 divs.enter()
   .append('div').classed('item',true);
 divs.style({
-	width:function(d){return d.value +'%';},
+	width:function(d){return ((d.value%1)*100) +'%';},
 	height:'100%',
 	margin: '0px',
 	float:'left',
@@ -56,7 +56,7 @@ setInterval(function(){
     .data(myData);
   // divs.transition().delay(0).duration(500)
     divs.style({
-       width:function(d){return d.value +'%';}
+       width:function(d){return  ((d.value%1)*100) +'%';}
   });
 },1000)
 
