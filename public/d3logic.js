@@ -4,9 +4,10 @@ var memValues = [{"label":"Active", "value":20},
               {"label":"Inactive", "value":50},
               {"label":"Free","value":10}];
 setInterval(function(){
+
 		$.get("/memtest",function(data){
 	memdata = JSON.parse(data);
-        console.log(memdata);
+        // console.log(memdata);
         var total = Number(memdata.MemTotal.size);
         var active = Number(memdata.Active.size);
         var inactive = Number(memdata.Inactive.size);
@@ -26,6 +27,11 @@ setInterval(function(){
     });
 	//console.log('getDAta',JSON.parse(data))});
 //console.log(data);
+
+  $.get("/cpuinfo",function(data){
+    cpudata = JSON.parse(data);
+    console.log('cpudata',cpudata);
+  })
 },1000);
 
 var divs = d3.select('#enter .right')
