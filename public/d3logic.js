@@ -119,7 +119,7 @@ setInterval(function(){
 vis = d3.select('#chart').data([memValues]);
 pie = d3.layout.pie().value(function(d){return d.value;});
 arcs = vis.selectAll("g.slice").data(pie)
-arcs..attr("fill", function(d, i){
+arcs.attr("fill", function(d, i){
         return color(i);
     })
     .attr("d", function (d) {
