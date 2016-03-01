@@ -38,7 +38,7 @@ local function printValue(avalue, indent, name)
       for _, value in ipairs(avalue) do
   counter_ipair = counter_ipair + 1
         printValue(value, indent..'    ')
-  if counter < length then
+  if counter_ipair < length then
     print(string.format("%s},", indent))
   else
     print(string.format("%s}", indent))
