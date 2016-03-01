@@ -13,7 +13,7 @@ local procfs = require("lj2procfs.procfs")
 
 local printJson = require("json_util")
 local meminfo = procfs.meminfo;
-local cpuinfo = procfs.cpuinfo;
+local cpuinfo = procfs.sys;
 
 local loadavg = procfs.loadavg;
 
