@@ -29,12 +29,12 @@ setInterval(function(){
 },1000);
 
 var divs = d3.select('#enter .right')
-.selectAll('div.item')
-.data(myData);
+  .selectAll('div.item')
+  .data(myData);
 divs.enter()
-.append('div').classed('item',true);
+  .append('div').classed('item',true);
 divs.style({
-	width:function(d){return d.value +'px';},
+	width:function(d){return d.value +'%';},
 	height:'100%',
 	margin: '0px',
 	float:'left',
@@ -48,7 +48,16 @@ divs.style({
         return 'black';
     }
   }
-})
+});
+
+divs = d3.select('#enter .right')
+  .selectAll('div.item')
+  .data(myData);
+divs.transition().delay(50).duration(950)
+  .style({
+      width:function(d){return d.value +'%';}
+
+  })
 
 
 
