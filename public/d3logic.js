@@ -48,6 +48,7 @@ divs.style({
         return 'black';
     }
   },
+  content: function(d){return d.label;}
 })
 
 setInterval(function(){
