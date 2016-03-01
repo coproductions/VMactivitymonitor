@@ -1,7 +1,7 @@
 console.log('hello from d3 js file');
 // var data = require('data.json');
 var memdata = {Active:{size:10}};
-var data = [{"label":"Active", "value":20},
+var myData = [{"label":"Active", "value":20},
               {"label":"Inactive", "value":50}];
 setInterval(function(){
 		$.get("/memtest",function(data){
@@ -20,8 +20,8 @@ setInterval(function(){
         var inactive100 = (inactive/total)*100;
 
         console.log('100s',active100,inactive100);
-        data[0].value = active100;
-        data[1].value = inactive100;
+        myData[0].value = active100;
+        myData[1].value = inactive100;
 
     });
 	//console.log('getDAta',JSON.parse(data))});
@@ -49,7 +49,7 @@ var color = d3.scale.category20c();
 
 
 
-var vis = d3.select('#chart').append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
+var vis = d3.select('#chart').append("svg:svg").data([myData]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
 var pie = d3.layout.pie().value(function(d){return d.value;});
 
 // declare an arc generator function
@@ -72,5 +72,5 @@ arcs.append("svg:text").attr("transform", function(d){
       d.innerRadius = 0;
       d.outerRadius = r;
     return "translate(" + arc.centroid(d) + ")";}).attr("text-anchor", "middle").text( function(d, i) {
-    return data[i].label;}
+    return myData[i].label;}
     );
