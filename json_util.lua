@@ -23,12 +23,12 @@ local function printValue(avalue, indent, name)
 -- define a counter
 
     if name then
-      print(string.format('%s"%s" : {AAA', indent, name))
+      print(string.format('%s"%s" : {', indent, name))
 
     end
 
     if #avalue > 0 then
-      print(string.format("%s{BBB", indent))
+      print(string.format("%s{", indent))
       -- it's a list,so use ipair
 --first get table length
   for _,value in ipairs(avalue) do
