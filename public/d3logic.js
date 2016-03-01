@@ -110,7 +110,7 @@ arcs.append("svg:text").attr("transform", function(d){
       d.innerRadius = 0;
       d.outerRadius = r;
     return "translate(" + arc.centroid(d) + ")";}).attr("text-anchor", "middle").text( function(d, i) {
-    return myData[i].label;}
+    return memValues[i].label;}
     );
 
 vis.selectAll("g.slice").data(pie).transition().delay(500).duration(500).append("svg:g").attr("class", "slice")
