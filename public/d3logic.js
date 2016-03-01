@@ -59,7 +59,7 @@ setInterval(function(){
     divs.style({
        width:function(d){return d.value+'%';}
   })
-  .text(function(d,i){return d.label+' '+d.value+'%';})
+  .text(function(d,i){return d.label+' '+d.value.toFixed(2)+'%';})
 },1000)
 
 
