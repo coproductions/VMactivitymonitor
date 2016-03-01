@@ -25,7 +25,7 @@ local function printValue(avalue, indent, name)
     if name then
       print(string.format('%s"%s" : {', indent, name))
     else
-      -- print(string.format("%s{", indent))
+      print(string.format("%s{", indent))
     end
 
     if #avalue > 0 then
