@@ -9,7 +9,7 @@ setInterval(function(){
         var active = Number(memdata.Active.size);
         var inactive = Number(memdata.Inactive.size);
         var cached = Number(memdata.Cached.size);
-        console.log('total',total,'remainig',active+inactive+cached);
+        console.log('total',total,'remainig',active+inactive);
     });
 	//console.log('getDAta',JSON.parse(data))});
 //console.log(data);
