@@ -54,8 +54,8 @@ setInterval(function(){
   divs = d3.select('#enter .right')
     .selectAll('div.item')
     .data(myData);
-  divs.transition().delay(0).duration(500)
-    .style({
+  // divs.transition().delay(0).duration(500)
+    divs.style({
        width:function(d){return d.value +'%';}
   });
 },1000)
