@@ -30,11 +30,11 @@ setInterval(function(){
 	//console.log('getDAta',JSON.parse(data))});
 //console.log(data);
 
-  $.get("/cpuinfo",function(data){
-    var sliced = data.slice(2,-2);
-    // cpudata = JSON.parse(sliced);
-    console.log('cpudata',data,sliced);
-  });
+  // $.get("/cpuinfo",function(data){
+  //   var sliced = data.slice(2,-2);
+  //   // cpudata = JSON.parse(sliced);
+  //   console.log('cpudata',data,sliced);
+  // });
 },1000);
 
 var divs = d3.select('#enter .right')
