@@ -30,10 +30,10 @@ setInterval(function(){
 	//console.log('getDAta',JSON.parse(data))});
 //console.log(data);
 
-  $.get("/cpuinfo",function(data){
-    cpudata = JSON.parse(data);
-    console.log('cpudata',cpudata);
-  });
+  // $.get("/cpuinfo",function(data){
+  //   cpudata = JSON.parse(data);
+  //   console.log('cpudata',cpudata);
+  // });
 },1000);
 
 var divs = d3.select('#enter .right')
