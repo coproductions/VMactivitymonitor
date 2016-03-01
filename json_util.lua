@@ -24,11 +24,11 @@ local function printValue(avalue, indent, name)
 
     if name then
       print(string.format('%s"%s" : {AAA', indent, name))
-    else
-      print(string.format("%s{BBB", indent))
+
     end
 
     if #avalue > 0 then
+      print(string.format("%s{BBB", indent))
       -- it's a list,so use ipair
 --first get table length
   for _,value in ipairs(avalue) do
