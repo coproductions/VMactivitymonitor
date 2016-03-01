@@ -1,2 +1,2 @@
 #!/bin/bash
-luajit cpuinfo.lua > public/cpuinfo.json
+luajit cputest.lua > public/cpuinfo.json
