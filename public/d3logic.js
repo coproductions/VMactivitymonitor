@@ -32,8 +32,8 @@ setInterval(function(){
 
   $.get("/cpuinfo",function(data){
     data = data.slice(1,-1);
-    cpudata = JSON.parse(data);
-    console.log('cpudata',data,cpudata);
+    console.log('cpudata',data);
+    // cpudata = JSON.parse(data);
   });
 },1000);
 
