@@ -20,7 +20,6 @@ setInterval(function(){
         var free100 = (free/total)*100;
         var inactive100 = (inactive/total)*100;
 
-        console.log('100s',active100,inactive100);
         myData[0].value = active100;
         myData[1].value = inactive100;
         myData[2].value = free100;
