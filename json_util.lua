@@ -23,9 +23,9 @@ local function printValue(avalue, indent, name)
 -- define a counter
 
     if name then
-      print(string.format('%s"%s" : {', indent, name))
+      print(string.format('%s"%s" : {AAA', indent, name))
     else
-      print(string.format("%s{", indent))
+      print(string.format("%s{BBB", indent))
     end
 
     if #avalue > 0 then
