@@ -35,10 +35,18 @@ divs.enter()
 .append('div').classed('item',true);
 divs.style({
 	width:function(d){return d.value +'px';},
-	height:'40px',
-	margin: '10px',
+	height:'100%',
+	margin: '0px',
 	float:'left',
-	'background-color': '#25b0b0'
+	'background-color': function(d){
+    switch(d.label){
+      case 'Active':
+        return 'red';
+      case 'Inactive':
+        return 'blue';
+      default:
+        return 'black';
+    }
 })
 
 

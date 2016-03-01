@@ -1,7 +1,5 @@
 .right{
-  background-color: red;
+  background-color: gray;
   width: 500px;
-}
-body{
-  background-color: red;
+  height: 100px;
 }
