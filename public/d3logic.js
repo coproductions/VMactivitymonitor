@@ -47,7 +47,6 @@ var r = h/2;
 var color = d3.scale.category20c();
 
 
-setInterval(function(){
 
 var vis = d3.select('#chart').append("svg:svg").data([myData]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
 var pie = d3.layout.pie().value(function(d){return d.value;});
@@ -74,6 +73,17 @@ arcs.append("svg:text").attr("transform", function(d){
     return "translate(" + arc.centroid(d) + ")";}).attr("text-anchor", "middle").text( function(d, i) {
     return myData[i].label;}
     );
-},1000)
+
+vis.selectAll("g.slice").data(pie).transition().delay(500).duration(500).append("svg:g").attr("class", "slice")
+.append("svg:path")
+    .attr("fill", function(d, i){
+        return color(i);
+    })
+    .attr("d", function (d) {
+        // log the result of the arc generator to show how cool it is :)
+        console.log(arc(d));
+        return arc(d);
+    });
+
 
 
