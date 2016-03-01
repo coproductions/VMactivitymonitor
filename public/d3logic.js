@@ -32,6 +32,7 @@ setInterval(function(){
 
   $.get("/cpuinfo",function(data){
     // cpudata = JSON.parse(data);
+
     console.log('cpudata',data);
   });
 },1000);
