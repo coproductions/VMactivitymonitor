@@ -21,11 +21,11 @@ local function printValue(avalue, indent, name)
   local counter_ipair = 0
   if type(avalue) == "table" then
 -- define a counter
-      print(string.format("%s{", indent))
 
     if name then
       print(string.format('%s"%s" : {', indent, name))
-
+    else
+      -- print(string.format("%s{", indent))
     end
 
     if #avalue > 0 then
