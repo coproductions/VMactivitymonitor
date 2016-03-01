@@ -50,14 +50,17 @@ divs.style({
   }
 });
 
-divs = d3.select('#enter .right')
-  .selectAll('div.item')
-  .data(myData);
-divs.transition().delay(50).duration(950)
-  .style({
-      width:function(d){return d.value +'%';}
+setInterval(function(){
+  divs = d3.select('#enter .right')
+    .selectAll('div.item')
+    .data(myData);
+  divs.transition().delay(50).duration(500)
+    .style({
+       width:function(d){return d.value +'%';}
+  });
+},1000)
 
-  })
+
 
 
 
