@@ -9,7 +9,7 @@ setInterval(function(){
         var active = memdata.Active.size;
         var inactive = memdata.Inactive.size;
         var cached = memdata.Cached.size;
-        console.log('total',total,'remainig',active+inactiv+cached);
+        console.log('total',total,'remainig',active+inactive+cached);
     });
 	//console.log('getDAta',JSON.parse(data))});
 //console.log(data);
