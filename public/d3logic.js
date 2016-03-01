@@ -2,7 +2,8 @@ console.log('hello from d3 js file');
 // var data = require('data.json');
 var memdata = {Active:{size:10}};
 var myData = [{"label":"Active", "value":20},
-              {"label":"Inactive", "value":50}];
+              {"label":"Inactive", "value":50},
+              {"label":"Free","value":10}];
 setInterval(function(){
 		$.get("/memtest",function(data){
 	memdata = JSON.parse(data);
@@ -22,6 +23,7 @@ setInterval(function(){
         console.log('100s',active100,inactive100);
         myData[0].value = active100;
         myData[1].value = inactive100;
+        myData[2].value = free100;
 
     });
 	//console.log('getDAta',JSON.parse(data))});
