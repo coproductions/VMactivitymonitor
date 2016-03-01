@@ -118,7 +118,7 @@ arcs.append("svg:text").attr("transform", function(d){
 setInterval(function(){
 vis = d3.select('#chart').data([memValues]);
 pie = d3.layout.pie().value(function(d){return d.value;});
-arcs = vis.selectAll("g.slice").data(pie)
+arcs = vis.selectAll("g.slice").data(pie).selectAll('svg:g')
 arcs.selectAll('svg:path').attr("fill", function(d, i){
         return color(i);
     })
