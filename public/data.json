@@ -1,6 +1,6 @@
 {
     "Active" : {
-        "size" :  "758132"
+        "size" :  "761868"
 ,
         "units" :  "kB"
     }
@@ -12,7 +12,7 @@
     }
 ,
     "MemFree" : {
-        "size" :  "507340"
+        "size" :  "502820"
 ,
         "units" :  "kB"
     }
@@ -24,19 +24,19 @@
     }
 ,
     "AnonHugePages" : {
-        "size" :  "36864"
+        "size" :  "34816"
 ,
         "units" :  "kB"
     }
 ,
     "VmallocChunk" : {
-        "size" :  "34359678196"
+        "size" :  "34359678148"
 ,
         "units" :  "kB"
     }
 ,
     "PageTables" : {
-        "size" :  "3476"
+        "size" :  "3496"
 ,
         "units" :  "kB"
     }
@@ -48,7 +48,7 @@
     }
 ,
     "Mapped" : {
-        "size" :  "43548"
+        "size" :  "43596"
 ,
         "units" :  "kB"
     }
@@ -72,7 +72,7 @@
     }
 ,
     "Buffers" : {
-        "size" :  "98520"
+        "size" :  "99252"
 ,
         "units" :  "kB"
     }
@@ -84,7 +84,7 @@
     }
 ,
     "Dirty" : {
-        "size" :  "28"
+        "size" :  "12"
 ,
         "units" :  "kB"
     }
@@ -96,13 +96,13 @@
     }
 ,
     "Active(file)" : {
-        "size" :  "660508"
+        "size" :  "663280"
 ,
         "units" :  "kB"
     }
 ,
     "SUnreclaim" : {
-        "size" :  "14196"
+        "size" :  "14424"
 ,
         "units" :  "kB"
     }
@@ -126,19 +126,19 @@
     }
 ,
     "Active(anon)" : {
-        "size" :  "97624"
+        "size" :  "98588"
 ,
         "units" :  "kB"
     }
 ,
     "Slab" : {
-        "size" :  "88276"
+        "size" :  "89336"
 ,
         "units" :  "kB"
     }
 ,
     "Committed_AS" : {
-        "size" :  "549032"
+        "size" :  "546932"
 ,
         "units" :  "kB"
     }
@@ -192,7 +192,7 @@
     }
 ,
     "Inactive" : {
-        "size" :  "302040"
+        "size" :  "301624"
 ,
         "units" :  "kB"
     }
@@ -204,31 +204,31 @@
     }
 ,
     "SReclaimable" : {
-        "size" :  "74080"
+        "size" :  "74912"
 ,
         "units" :  "kB"
     }
 ,
     "Cached" : {
-        "size" :  "864120"
+        "size" :  "865744"
 ,
         "units" :  "kB"
     }
 ,
     "MemAvailable" : {
-        "size" :  "1337664"
+        "size" :  "1335916"
 ,
         "units" :  "kB"
     }
 ,
     "AnonPages" : {
-        "size" :  "97524"
+        "size" :  "98488"
 ,
         "units" :  "kB"
     }
 ,
     "Inactive(file)" : {
-        "size" :  "301712"
+        "size" :  "301296"
 ,
         "units" :  "kB"
     }
