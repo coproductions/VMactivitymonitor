@@ -1,6 +1,8 @@
 console.log('hello from d3 js file');
 // var data = require('data.json');
 var memdata = {Active:{size:10}};
+var data = [{"label":"Active", "value":0},
+              {"label":"Available", "value":0}];
 setInterval(function(){
 		$.get("/memtest",function(data){
 	memdata = JSON.parse(data);
@@ -10,7 +12,14 @@ setInterval(function(){
         var inactive = Number(memdata.Inactive.size);
         var cached = Number(memdata.Cached.size);
         var available = Number(memdata.MemAvailable.size);
-        console.log('total',total,'remainig',active+inactive+available);
+        var free = Number(memdata.MemFree.size);
+        console.log('total',total,'remainig',active+available);
+        var activepercentage = (active/total)*100;
+        var availablepercentage = (available/total)*100;
+        console.log('percentages',activepercentage,availablepercentage);
+        data[0].value = activepercentage;
+        data[1].value = availablepercentage;
+
     });
 	//console.log('getDAta',JSON.parse(data))});
 //console.log(data);
@@ -34,9 +43,7 @@ var h = 400;
 var r = h/2;
 var color = d3.scale.category20c();
 
-var data = [{"label":"Category A", "value":20},
-              {"label":"Category B", "value":50},
-              {"label":"Category C", "value":30}];
+
 
 
 var vis = d3.select('#chart').append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
