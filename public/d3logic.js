@@ -49,7 +49,7 @@ divs.style({
     }
   }
 })
-.text(function(d,i){return d.label;})
+
 
 setInterval(function(){
   divs = d3.select('#enter .right')
@@ -58,7 +58,8 @@ setInterval(function(){
   // divs.transition().delay(0).duration(500)
     divs.style({
        width:function(d){return d.value+'%';}
-  });
+  })
+  .text(function(d,i){return d.label+' '+d.value+'%';})
 },1000)
 
 
