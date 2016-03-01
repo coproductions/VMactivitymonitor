@@ -46,6 +46,8 @@ divs.style({
         return 'red';
       case 'Inactive':
         return 'blue';
+      case 'Free':
+        return 'green';
       default:
         return 'black';
     }
