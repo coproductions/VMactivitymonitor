@@ -5,7 +5,12 @@ setInterval(function(){
 		$.get("/memtest",function(data){
 	memdata = JSON.parse(data);
         console.log(memdata);
-});
+        var total = memdata.MemTotal.size;
+        var active = memdata.Active.size;
+        var inactive = memdata.Inactive.size;
+        var cached = memdata.Cached.size;
+        console.log('total',total,'remainig',active+inactiv+cached);
+    });
 	//console.log('getDAta',JSON.parse(data))});
 //console.log(data);
 },1000);
