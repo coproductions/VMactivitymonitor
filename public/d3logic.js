@@ -34,7 +34,7 @@ var divs = d3.select('#enter .right')
 divs.enter()
 .append('div').classed('item',true);
 divs.style({
-	width:function(d){return d +'px';},
+	width:function(d){return d.value +'px';},
 	height:'40px',
 	margin: '10px',
 	float:'left',
