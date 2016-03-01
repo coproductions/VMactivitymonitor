@@ -1,12 +1,14 @@
 console.log('hello from d3 js file');
 // var data = require('data.json');
+var memdata;
+var cpudata;
 var memValues = [{"label":"Active", "value":20},
               {"label":"Inactive", "value":50},
               {"label":"Free","value":10}];
 setInterval(function(){
 
 		$.get("/memtest",function(data){
-	memdata = JSON.parse(data);
+      	memdata = JSON.parse(data);
         // console.log(memdata);
         var total = Number(memdata.MemTotal.size);
         var active = Number(memdata.Active.size);
@@ -31,7 +33,7 @@ setInterval(function(){
   $.get("/cpuinfo",function(data){
     cpudata = JSON.parse(data);
     console.log('cpudata',cpudata);
-  })
+  });
 },1000);
 
 var divs = d3.select('#enter .right')
