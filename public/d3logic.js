@@ -125,7 +125,7 @@ vis.selectAll("g.slice").data(pie).transition().delay(500).duration(500).append(
     });
 
 setInterval(function(){
-  vis = d3.select('#chart')data([memValues])
+  vis = d3.select('#chart').data([memValues])
   pie = d3.layout.pie().value(function(d){return d.value;})
   arcs = vis.selectAll("g.slice").data(pie)
    .attr("fill", function(d, i){
