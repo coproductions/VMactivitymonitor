@@ -49,7 +49,6 @@ divs.style({
     }
   },
 })
-  .text(d.label)
 
 setInterval(function(){
   divs = d3.select('#enter .right')
