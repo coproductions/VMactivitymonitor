@@ -95,47 +95,38 @@ var arc = d3.svg.arc().outerRadius(r);
 
 // select paths, use arc generator to draw
 var arcs = vis.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice");
-arcs.append("svg:path")
-    .attr("fill", function(d, i){
-        return color(i);
-    })
-    .attr("d", function (d) {
-        // log the result of the arc generator to show how cool it is :)
-        console.log(arc(d));
-        return arc(d);
-    });
 
-// add the text
-arcs.append("svg:text").attr("transform", function(d){
-      d.innerRadius = 0;
-      d.outerRadius = r;
-    return "translate(" + arc.centroid(d) + ")";}).attr("text-anchor", "middle").text( function(d, i) {
-    return memValues[i].label;}
-    );
-
-vis.selectAll("g.slice").data(pie).transition().delay(500).duration(500).append("svg:g").attr("class", "slice")
-.append("svg:path")
-    .attr("fill", function(d, i){
-        return color(i);
-    })
-    .attr("d", function (d) {
-        // log the result of the arc generator to show how cool it is :)
-        console.log(arc(d));
-        return arc(d);
-    });
 
 setInterval(function(){
-  vis = d3.select('#chart').data([memValues])
-  pie = d3.layout.pie().value(function(d){return d.value;})
-  arcs = vis.selectAll("g.slice").data(pie)
-   .attr("fill", function(d, i){
-        return color(i);
-    })
-    .attr("d", function (d) {
-        // log the result of the arc generator to show how cool it is :)
-        console.log(arc(d));
-        return arc(d);
-    });
 
+  arcs.append("svg:path")
+      .attr("fill", function(d, i){
+          return color(i);
+      })
+      .attr("d", function (d) {
+          // log the result of the arc generator to show how cool it is :)
+          console.log(arc(d));
+          return arc(d);
+      });
+
+  // add the text
+  arcs.append("svg:text").attr("transform", function(d){
+        d.innerRadius = 0;
+        d.outerRadius = r;
+      return "translate(" + arc.centroid(d) + ")";}).attr("text-anchor", "middle").text( function(d, i) {
+      return memValues[i].label;}
+      );
+
+  vis.selectAll("g.slice").data(pie).transition().delay(500).duration(500).append("svg:g").attr("class", "slice")
+  .append("svg:path")
+      .attr("fill", function(d, i){
+          return color(i);
+      })
+      .attr("d", function (d) {
+          // log the result of the arc generator to show how cool it is :)
+          console.log(arc(d));
+          return arc(d);
+      });
 },1000)
+
 
