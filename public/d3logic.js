@@ -2,7 +2,7 @@ console.log('hello from d3 js file');
 // var data = require('data.json');
 var memdata = {Active:{size:10}};
 var data = [{"label":"Active", "value":0},
-              {"label":"Free", "value":0}];
+              {"label":"Inactiv", "value":0}];
 setInterval(function(){
 		$.get("/memtest",function(data){
 	memdata = JSON.parse(data);
@@ -14,12 +14,14 @@ setInterval(function(){
         var available = Number(memdata.MemAvailable.size);
         var free = Number(memdata.MemFree.size);
         console.log('total',total,'remainig',active+available);
-        var activepercentage = (active/total)*100;
-        var availablepercentage = (available/total)*100;
-        var freepercentage = (free/total)*100;
-        console.log('percentages',activepercentage,availablepercentage);
-        data[0].value = activepercentage;
-        data[1].value = freepercentage;
+        var active100 = (active/total)*100;
+        var available100 = (available/total)*100;
+        var free100 = (free/total)*100;
+        var inactive100 = (free/inactive)*100;
+
+        console.log('100s',active100,available100);
+        data[0].value = active100;
+        data[1].value = inactive100;
 
     });
 	//console.log('getDAta',JSON.parse(data))});
