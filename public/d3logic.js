@@ -1,7 +1,6 @@
 console.log('hello from d3 js file');
 // var data = require('data.json');
-var memdata = {Active:{size:10}};
-var myData = [{"label":"Active", "value":20},
+var memValues = [{"label":"Active", "value":20},
               {"label":"Inactive", "value":50},
               {"label":"Free","value":10}];
 setInterval(function(){
@@ -20,9 +19,9 @@ setInterval(function(){
         var free100 = (free/total)*100;
         var inactive100 = (inactive/total)*100;
 
-        myData[0].value = active100;
-        myData[1].value = inactive100;
-        myData[2].value = free100;
+        memValues[0].value = active100;
+        memValues[1].value = inactive100;
+        memValues[2].value = free100;
 
     });
 	//console.log('getDAta',JSON.parse(data))});
@@ -31,7 +30,7 @@ setInterval(function(){
 
 var divs = d3.select('#enter .right')
   .selectAll('div.item')
-  .data(myData);
+  .data(memValues);
 divs.enter()
   .append('div').classed('item',true);
 divs.style({
@@ -57,7 +56,7 @@ divs.style({
 setInterval(function(){
   divs = d3.select('#enter .right')
     .selectAll('div.item')
-    .data(myData);
+    .data(memValues);
   // divs.transition().delay(0).duration(500)
     divs.style({
        width:function(d){return d.value+'%';}

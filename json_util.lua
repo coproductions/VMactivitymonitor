@@ -16,11 +16,11 @@ local function printValue(avalue, indent, name)
 
   indent = indent or ""
 
-
-  if type(avalue) == "table" then
--- define a counter
   local length = 0
   local counter = 0
+  if type(avalue) == "table" then
+-- define a counter
+
     if name then
       print(string.format('%s"%s" : {', indent, name))
     else
