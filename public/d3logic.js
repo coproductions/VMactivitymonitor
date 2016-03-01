@@ -47,9 +47,9 @@ divs.style({
       default:
         return 'black';
     }
-  },
-  content: function(d){return d.label;}
+  }
 })
+.text(function(d,i){return d.label;})
 
 setInterval(function(){
   divs = d3.select('#enter .right')
