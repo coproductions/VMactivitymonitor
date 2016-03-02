@@ -114,26 +114,27 @@ var memPieData = [
 
 setInterval(function(){
 
-memPieData = [
-    {
-        value: memValues[0].value,
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Red"
-    },
-    {
-        value: memValues[1].value,
-        color: "#46BFBD",
-        highlight: "#5AD3D1",
-        label: "Green"
-    },
-    {
-        value: memValues[2].value,
-        color: "#FDB45C",
-        highlight: "#FFC870",
-        label: "Yellow"
-    }
-];
+  memPieData = [
+      {
+          value: memValues[0].value,
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Red"
+      },
+      {
+          value: memValues[1].value,
+          color: "#46BFBD",
+          highlight: "#5AD3D1",
+          label: "Green"
+      },
+      {
+          value: memValues[2].value,
+          color: "#FDB45C",
+          highlight: "#FFC870",
+          label: "Yellow"
+      }
+  ];
+  myPieChart.update();
 },1000)
 
 var options = {};
