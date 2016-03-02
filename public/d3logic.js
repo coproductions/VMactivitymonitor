@@ -111,4 +111,7 @@ var data = [
         label: "Yellow"
     }
 ];
+
+var options = {};
+
 var myPieChart = new Chart(ctx).Pie(data,options);
