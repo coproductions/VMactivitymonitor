@@ -120,7 +120,9 @@ var options = {
         labelFontStyle : "normal",
         labelFontSize : 24,
         labelFontColor : "#666",
-  multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
+  multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>",
+      legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+
 };
 
 var myPieChart = new Chart(ctx).Pie(memPieData,options);
@@ -153,6 +155,12 @@ setInterval(function(){
                     labelFontSize : '16'
       }
   ];
+  console.log('newval',memValues[0].value);
+  myPieChart.segments[1].value = memValues[0].value;
+  myPieChart.segments[2].value = memValues[1].value;
+  myPieChart.segments[3].value = memValues[2].value;
+
+
   myPieChart.update();
 },1000)
 
