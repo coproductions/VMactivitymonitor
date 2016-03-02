@@ -93,19 +93,19 @@ Chart.defaults.global = {
 
 var memPieData = [
     {
-        value: 100,
+        value: 30,
         color:"#F7464A",
         highlight: "#FF5A5E",
         label: "Red"
     },
     {
-        value: 100,
+        value: 40,
         color: "#46BFBD",
         highlight: "#5AD3D1",
         label: "Green"
     },
     {
-        value: 100,
+        value: 30,
         color: "#FDB45C",
         highlight: "#FFC870",
         label: "Yellow"
