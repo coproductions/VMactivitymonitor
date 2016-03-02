@@ -82,12 +82,10 @@ Chart.defaults.global = {
     animation: true,
         // Function - Will fire on animation progression.
     onAnimationProgress: function(){
-      console.log('animation progress')
     },
 
     // Function - Will fire on animation completion.
     onAnimationComplete: function(){
-      console.log('animation complete')
     }
   };
 
@@ -130,38 +128,9 @@ var options = {
 var myPieChart = new Chart(ctx).Pie(memPieData,options);
 
 setInterval(function(){
-
-  memPieData = [
-      {
-          value: memValues[0].value,
-          color:"red",
-          highlight: "#FF5A5E",
-          label: "Active",
-           labelColor : 'white',
-                    labelFontSize : '16'
-      },
-      {
-          value: memValues[1].value,
-          color: "blue",
-          highlight: "#5AD3D1",
-          label: "Inactive",
-           labelColor : 'white',
-                    labelFontSize : '16'
-      },
-      {
-          value: memValues[2].value,
-          color: "green",
-          highlight: "#FFC870",
-          label: "Free",
-           labelColor : 'white',
-                    labelFontSize : '16'
-      }
-  ];
-  console.log('newval',memValues[0].value);
   myPieChart.segments[0].value = memValues[0].value;
   myPieChart.segments[1].value = memValues[1].value;
   myPieChart.segments[2].value = memValues[2].value;
-
 
   myPieChart.update();
 },1000)
