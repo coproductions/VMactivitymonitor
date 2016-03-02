@@ -143,6 +143,8 @@ setInterval(function(){
   myPieChart.update();
 },1000)
 
-var options = {};
+var options = {
+  multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
+};
 
 var myPieChart = new Chart(ctx).Pie(memPieData,options);
