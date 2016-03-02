@@ -119,19 +119,25 @@ setInterval(function(){
           value: memValues[0].value,
           color:"#F7464A",
           highlight: "#FF5A5E",
-          label: "Red"
+          label: "Red",
+           labelColor : 'white',
+                    labelFontSize : '16'
       },
       {
           value: memValues[1].value,
           color: "#46BFBD",
           highlight: "#5AD3D1",
-          label: "Green"
+          label: "Green",
+           labelColor : 'white',
+                    labelFontSize : '16'
       },
       {
           value: memValues[2].value,
           color: "#FDB45C",
           highlight: "#FFC870",
-          label: "Yellow"
+          label: "Yellow",
+           labelColor : 'white',
+                    labelFontSize : '16'
       }
   ];
   myPieChart.update();
