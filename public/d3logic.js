@@ -144,6 +144,10 @@ setInterval(function(){
 },1000)
 
 var options = {
+      labelFontFamily : "Arial",
+        labelFontStyle : "normal",
+        labelFontSize : 24,
+        labelFontColor : "#666",
   multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
 };
 
