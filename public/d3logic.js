@@ -144,6 +144,7 @@ setInterval(function(){
 },1000)
 
 var options = {
+   scaleShowLabels: true,
       labelFontFamily : "Arial",
         labelFontStyle : "normal",
         labelFontSize : 24,
