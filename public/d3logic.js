@@ -156,9 +156,9 @@ setInterval(function(){
       }
   ];
   console.log('newval',memValues[0].value);
-  myPieChart.segments[1].value = memValues[0].value;
-  myPieChart.segments[2].value = memValues[1].value;
-  myPieChart.segments[3].value = memValues[2].value;
+  myPieChart.segments[0].value = memValues[0].value;
+  myPieChart.segments[1].value = memValues[1].value;
+  myPieChart.segments[2].value = memValues[2].value;
 
 
   myPieChart.update();
