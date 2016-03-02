@@ -96,7 +96,9 @@ var memPieData = [
         value: 30,
         color:"red",
         highlight: "#FF5A5E",
-        label: "Active"
+        label: "Active",
+           labelColor : 'white',
+                    labelFontSize : '16'
     },
     {
         value: 40,
