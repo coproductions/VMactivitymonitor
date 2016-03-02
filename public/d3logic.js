@@ -112,6 +112,19 @@ var memPieData = [
     }
 ];
 
+
+
+var options = {
+   scaleShowLabels: true,
+      labelFontFamily : "Arial",
+        labelFontStyle : "normal",
+        labelFontSize : 24,
+        labelFontColor : "#666",
+  multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
+};
+
+var myPieChart = new Chart(ctx).Pie(memPieData,options);
+
 setInterval(function(){
 
   memPieData = [
@@ -143,13 +156,4 @@ setInterval(function(){
   myPieChart.update();
 },1000)
 
-var options = {
-   scaleShowLabels: true,
-      labelFontFamily : "Arial",
-        labelFontStyle : "normal",
-        labelFontSize : 24,
-        labelFontColor : "#666",
-  multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
-};
-
-var myPieChart = new Chart(ctx).Pie(memPieData,options);
+document.getElementById('js-legend').innerHTML = myPieChart.generateLegend();
