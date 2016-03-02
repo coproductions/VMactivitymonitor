@@ -91,7 +91,7 @@ Chart.defaults.global = {
     }
   };
 
-var data = [
+var memPieData = [
     {
         value: 300,
         color:"#F7464A",
@@ -112,6 +112,30 @@ var data = [
     }
 ];
 
+setInterval(function(){
+
+memPieData = [
+    {
+        value: memValues[0].value,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Red"
+    },
+    {
+        value: memValues[1].value,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "Green"
+    },
+    {
+        value: memValues[2].value,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "Yellow"
+    }
+];
+},1000)
+
 var options = {};
 
-var myPieChart = new Chart(ctx).Pie(data,options);
+var myPieChart = new Chart(ctx).Pie(memPieData,options);
