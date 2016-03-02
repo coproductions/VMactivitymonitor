@@ -132,25 +132,25 @@ setInterval(function(){
   memPieData = [
       {
           value: memValues[0].value,
-          color:"#F7464A",
+          color:"red",
           highlight: "#FF5A5E",
-          label: "Red",
+          label: "Active",
            labelColor : 'white',
                     labelFontSize : '16'
       },
       {
           value: memValues[1].value,
-          color: "#46BFBD",
+          color: "blue",
           highlight: "#5AD3D1",
-          label: "Green",
+          label: "Inactive",
            labelColor : 'white',
                     labelFontSize : '16'
       },
       {
           value: memValues[2].value,
-          color: "#FDB45C",
+          color: "green",
           highlight: "#FFC870",
-          label: "Yellow",
+          label: "Free",
            labelColor : 'white',
                     labelFontSize : '16'
       }
